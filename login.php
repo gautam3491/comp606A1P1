@@ -21,6 +21,7 @@
     }
 </style>
 <body>
+<div class="container">
     <div class="row log-in">
         <div class="col text-white">
             <h3><</h3>
@@ -33,9 +34,22 @@
         </div>
     </div>
     <div class="row log-info">
-    aaaaaaaaaaaa
+        <div class="container">
+            <form action="login_page.php" method="POST">
+                <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" name="pwd" required>
+                </div>
+                <button type="submit" class="btn btn-default btn-block">Login</button>
+            </form>
+        </div>
     </div>
     <div class="row log-btn">
-        <input type="submit" value="Log in" class="btn btn-light btn-block text-white"/>
+        <!--<input type="submit" value="Log in" class="btn btn-light btn-block text-white"/>-->
     </div>
+</div>
 </body>
