@@ -27,7 +27,10 @@
                 <a class="nav-link text-white" href="#">Auto-invest</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link text-white" href="#">Log in</a>
+                <a class="nav-link text-white" href="login.php">Log in</a>
+                </li>
+                <li class="nav-item">
+                <a href="#" class="btn btn-light text-white">Sign up</a>
                 </li>
             </ul>
         </nav>
