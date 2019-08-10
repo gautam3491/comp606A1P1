@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(isset($_SESSION['username'])){
+    header("location:index.php");
+}
 ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>  
@@ -51,12 +54,20 @@ session_start();
                 <br/>
                 <a href="signup.php"><input type="button" value="Not Registered Yet!!" class="btn btn-default btn-block"/></a>
                 <br />
-                <?php if(isset($_SESSION['error'])){
+                <?php 
+                    if(isset($_SESSION['error'])){
                     echo "<p class='alert alert-danger text-center'>";
                     echo $_SESSION['error'];
                     echo "</p>";
                     session_destroy();
-                } ?>
+                        } 
+                    if(isset($_SESSION['success'])){
+                        echo "<p class='alert alert-success text-center'>";
+                        echo $_SESSION['success'];
+                        echo "</p>";
+                        session_destroy();
+                        }
+                ?>
             </form>
         </div>
     </div>
