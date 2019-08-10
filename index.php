@@ -1,17 +1,20 @@
 <?php
-include_once("header.php");
-include_once("navbar.php");
-if (isset($_SESSION["username"]) && ($_SESSION["username"]!='')) {
-    $username = $_SESSION['username'];
-    
+error_reporting(0);
+session_start();
+
+require_once("header.php");
+require_once("navbar.php");
+
+if((!isset($_SESSION['username']))||($_SESSION['username']=='')) {
+    $username = "";       
 }else
 {
-    $username = "";    
+    $username = $_SESSION['username'];
 }
 
 ?>
-<h1 class="text-white"> Making investment easy</h1>
-<h2></h2>
+<h1 class="text-white"> Making investment easy  </h1>
+<h3 class="text-white"><?php echo $username ?></h3>
 <?php
-include_once("footer.php");
+require_once("footer.php");
 ?>

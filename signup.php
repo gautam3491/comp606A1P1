@@ -24,7 +24,7 @@
 <div class="container">
     <div class="row sign-up">
         <div class="col text-white">
-            <h3><a href="#" class="text-white"><</a></h3>
+            <h3><a href="index.php" class="text-white"><</a></h3>
         </div>
         <div class="col text-center text-white">
             <h3>Sign up</h3>

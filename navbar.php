@@ -26,12 +26,20 @@
                 <li class="nav-item">
                 <a class="nav-link text-white" href="#">Auto-invest</a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link text-white" href="login.php">Log in</a>
-                </li>
-                <li class="nav-item">
-                <a href="#" class="btn btn-light text-white">Sign up</a>
-                </li>
+                <?php if($_SESSION['username']==''){ 
+                    echo "<li class=\"nav-item\">";
+                    echo "<a class=\"nav-link text-white\" href=\"login.php\">Log in</a>";
+                    echo "</li>";
+                    echo "<li class=\"nav-item\">";
+                    echo "<a href=\"signup.php\" class=\"btn btn-light text-white\">Sign up</a>";
+                    echo "</li>";
+                 }else{
+                    echo "<li class=\"nav-item\">";
+                    echo "<a class=\"nav-link text-white\" href=\"logout.php\">Log out</a>";
+                    echo "</li>";     
+                 } 
+                 ?>    
+
             </ul>
         </nav>
     </div>
