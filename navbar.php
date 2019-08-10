@@ -1,3 +1,4 @@
+<!--navbar page for menus-->
 <div class="row">
     <div class="col text-right" >
         <nav class="navbar navbar-expand-sm">

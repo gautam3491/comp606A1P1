@@ -1,3 +1,4 @@
+<!--Main page to browse for user-->
 <?php
 error_reporting(0);
 session_start();

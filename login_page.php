@@ -1,3 +1,4 @@
+<!--this page gets the data from login.php page and check with the database-->
 <?php 
 session_start();
 require_once("dbconnect.php");

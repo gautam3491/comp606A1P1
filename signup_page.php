@@ -1,3 +1,4 @@
+<!--This page gets data from signup.php page and inserts the data to database-->
 <?php 
 session_start();
 require_once("dbconnect.php");
