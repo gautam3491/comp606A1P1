@@ -1,4 +1,4 @@
 </div>
-<p>Copywrite</p>
+<p></p>
 </body>
 </html>
