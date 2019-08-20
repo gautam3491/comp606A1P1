@@ -9,21 +9,29 @@ $lastname = $_POST['lastname'];
 $email = $_POST['email'];
 $password = $_POST['pwd'];
 
-$statement = $mysqli->prepare("INSERT INTO customers( first_name, middle_name, last_name,
-  email, password) values(?, ?, ?, ?, ?)");
+$sql = "select * from customers where email = '".$email."'";
+$result = mysqli_query($mysqli,$sql);
+$row = mysqli_num_rows($result);
 
+if($row == 0){
 
-$statement->bind_param("sssss", $firstname, $middlename, $lastname, $email, $password);
-$statement->execute();
+  $statement = $mysqli->prepare("INSERT INTO customers( first_name, middle_name, last_name,
+    email, password) values(?, ?, ?, ?, ?)");
 
-if ($statement->affected_rows == 1){
-  $_SESSION['success'] = "Register Successfull!!";
-  $statement->close();
-  header("Location: login.php");
+  $statement->bind_param("sssss", $firstname, $middlename, $lastname, $email, $password);
+  $statement->execute();
+
+  if ($statement->affected_rows == 1){
+    $_SESSION['success'] = "Register Successfull!!";
+    $statement->close();
+    header("Location: login.php");
+  }else{
+    $_SESSION['error'] = "Can not register at the moment!!";
+    $statement->close();
+    header("Location: signup.php");
+  }
 }else{
-  $_SESSION['error'] = "Can not register at the moment!!";
-  $statement->close();
+  $_SESSION['error'] = "Email is already in use!! Can not register at the moment!!";
   header("Location: signup.php");
 }
-
 ?>

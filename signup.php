@@ -6,7 +6,10 @@ if(isset($_SESSION['username'])){
 }
 ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+<script src="form_validation.js"></script> 
 <style>
     body{
         background-color: grey;
@@ -42,30 +45,39 @@ if(isset($_SESSION['username'])){
     </div>
     <div class="row sign-info">
         <div class="container">
-            <form action="signup_page.php" method="POST">
+            <form action="signup_page.php" method="POST" id="registration" name="registration">
                 <div class="form-group">
-                    <label for="firstname">First Name:</label>
-                    <input type="text" class="form-control" id="firstname" name="firstname" required>
+                    <label for="firstname">First Naaame:</label>
+                    <input type="text" class="form-control" id="firstname" name="firstname" >
                 </div>
                 <div class="form-group">
                     <label for="middlename">Middle Name:</label>
-                    <input type="text" class="form-control" id="middlename" name="middlename" required>
+                    <input type="text" class="form-control" id="middlename" name="middlename" >
                 </div>
                 <div class="form-group">
                     <label for="lastname">Last Name:</label>
-                    <input type="text" class="form-control" id="lastname" name="lastname" required>
+                    <input type="text" class="form-control" id="lastname" name="lastname" >
                 </div>
                 <div class="form-group">
                     <label for="email">Email address:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
+                    <input type="email" class="form-control" id="email" name="email" >
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd" name="pwd" required>
+                    <input type="password" class="form-control" id="pwd" name="pwd" >
                 </div>
                 <button type="submit" class="btn btn-default btn-block">Sign up</button>
                 <br/>
                 <a href="login.php"><input type="button" value="Already Registered!!" class="btn btn-default btn-block"/></a>
+                <br />
+                <?php 
+                    if(isset($_SESSION['error'])){
+                    echo "<p class='alert alert-danger text-center'>";
+                    echo $_SESSION['error'];
+                    echo "</p>";
+                    session_destroy();
+                        } 
+                ?>
             </form>
         </div>
     </div>
