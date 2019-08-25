@@ -27,7 +27,9 @@
                 <li class="nav-item">
                 <a class="nav-link text-white" href="#">Auto-invest</a>
                 </li>
-                <?php if($_SESSION['username']==''){ 
+                <?php 
+                    //toggle to show login, signup and logout button
+                    if($_SESSION['username']==''){ 
                     echo "<li class=\"nav-item\">";
                     echo "<a class=\"nav-link text-white\" href=\"login.php\">Log in</a>";
                     echo "</li>";

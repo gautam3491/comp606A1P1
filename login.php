@@ -17,7 +17,7 @@ if(isset($_SESSION['username'])){
     }
     .log-info{
         background-color: white;
-        height: 680px;
+        height: 720px;
     }
     .log-btn{
         background-color: white;

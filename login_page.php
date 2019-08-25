@@ -9,10 +9,7 @@ $password = $_POST['pwd'];
 $sql = "select * from customers where email='".$email."' and password='".$password."'";
 
 $result = mysqli_query($mysqli,$sql);
-//$row = $result->fetch_row();
-//var_dump($row);
 $row = mysqli_num_rows($result);
-//var_dump($row);
 
 if ($row==1){
   $row = $result->fetch_row();

@@ -1,22 +1,39 @@
 $(document).ready(function() {
-    $('form[id="registration"]').validate({
+    //validation rules
+    $("#registration").validate({
         rules: {
-            firstname: 'required',
-            lastname: 'required',
-            email: {
+            firstname: "required",
+            lastname: {
                 required: true,
-                email: true,
+                minlength: 3
+            },
+            phoneno: {
+                required: true,
+                number: true,
+                minlength: 8
+            },
+            emails: {
+                required: true,
+                email: true
             },
             pwd: {
                 required: true,
-                minlength: 8,
+                minlength: 3,
             }
         },
         messages: {
-            lastname: 'This field is required',
-            email: 'Enter a valid email',
+            firstname: 'First name can not be empty!!',
+            lastname: { 
+                required: 'Last name can not be empty!!',
+                minlength: 'Must be 3 characters or more!!'
+            },
+            phoneno:{
+                required: 'Phone no can not be empty!!',
+                minlength: 'Must be 8 numbers or more!!'
+            },
             pwd: {
-            minlength: 'Password must be at least 8 characters long'
+                required: 'Password can not be empty',
+                minlength: 'Must be 3 characters or more!!'
             }
         },
         submitHandler: function(form) {

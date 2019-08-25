@@ -4,8 +4,8 @@ session_start();
 require_once("dbconnect.php");
 
 $firstname = $_POST['firstname'];
-$middlename = $_POST['middlename'];
 $lastname = $_POST['lastname'];
+$phoneno = $_POST['phoneno'];
 $email = $_POST['email'];
 $password = $_POST['pwd'];
 
@@ -13,12 +13,13 @@ $sql = "select * from customers where email = '".$email."'";
 $result = mysqli_query($mysqli,$sql);
 $row = mysqli_num_rows($result);
 
+//to check if email already exist or not
 if($row == 0){
 
-  $statement = $mysqli->prepare("INSERT INTO customers( first_name, middle_name, last_name,
+  $statement = $mysqli->prepare("INSERT INTO customers( first_name, last_name, phoneno,
     email, password) values(?, ?, ?, ?, ?)");
 
-  $statement->bind_param("sssss", $firstname, $middlename, $lastname, $email, $password);
+  $statement->bind_param("ssiss", $firstname, $lastname, $phoneno, $email, $password);
   $statement->execute();
 
   if ($statement->affected_rows == 1){

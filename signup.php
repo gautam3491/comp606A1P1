@@ -7,9 +7,7 @@ if(isset($_SESSION['username'])){
 ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-<script src="form_validation.js"></script> 
+ 
 <style>
     body{
         background-color: grey;
@@ -20,7 +18,7 @@ if(isset($_SESSION['username'])){
     }
     .sign-info{
         background-color: white;
-        height: 680px;
+        height: 780px;
     }
     .sign-btn{
         background-color: white;
@@ -47,20 +45,20 @@ if(isset($_SESSION['username'])){
         <div class="container">
             <form action="signup_page.php" method="POST" id="registration" name="registration">
                 <div class="form-group">
-                    <label for="firstname">First Naaame:</label>
+                    <label for="firstname">First Name:</label>
                     <input type="text" class="form-control" id="firstname" name="firstname" >
-                </div>
-                <div class="form-group">
-                    <label for="middlename">Middle Name:</label>
-                    <input type="text" class="form-control" id="middlename" name="middlename" >
                 </div>
                 <div class="form-group">
                     <label for="lastname">Last Name:</label>
                     <input type="text" class="form-control" id="lastname" name="lastname" >
                 </div>
                 <div class="form-group">
+                    <label for="phoneno">Phone No:</label>
+                    <input type="number" class="form-control" id="phoneno" name="phoneno" >
+                </div>
+                <div class="form-group">
                     <label for="email">Email address:</label>
-                    <input type="email" class="form-control" id="email" name="email" >
+                    <input type="email" class="form-control" id="email" name="emails" >
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
@@ -81,8 +79,10 @@ if(isset($_SESSION['username'])){
             </form>
         </div>
     </div>
-    <div class="row sign-btn">
-        <!--<input type="submit" value="Log in" class="btn btn-light btn-block text-white"/>-->
-    </div>
 </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!--jquery validation plugin-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<!--validation jquery script-->
+<script src="form_validation.js"></script>
