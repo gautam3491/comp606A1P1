@@ -5,7 +5,7 @@
 #create databse as 'myshop'
 
 #create table customers with fields
-#customer_id integer
+#customer_id big integer
 #first_name varchar
 #last_name varchar
 #phoneno integer
