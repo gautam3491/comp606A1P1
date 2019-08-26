@@ -29,10 +29,12 @@ if($row == 0){
   }else{
     $_SESSION['error'] = "Can not register at the moment!!";
     $statement->close();
-    header("Location: signup.php");
+    //to keep the form data
+    echo "<script>history.back();</script>";
   }
 }else{
   $_SESSION['error'] = "Email is already in use!! Can not register at the moment!!";
-  header("Location: signup.php");
+  //to keep the form data
+  echo "<script>history.back();</script>";
 }
 ?>
